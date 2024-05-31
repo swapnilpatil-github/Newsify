@@ -1,0 +1,38 @@
+
+.weather {
+  position: relative;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather-modal {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 200px;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none; 
+}
+
+.weather:hover .weather-modal {
+  display: block; 
+}
+
+
+.weather-modal table {
+  width: 100%;
+}
+
+.weather-modal td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.weather-modal td:first-child {
+  font-weight: bold;
+}

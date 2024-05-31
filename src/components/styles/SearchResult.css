@@ -1,0 +1,59 @@
+
+
+.search-results-container {
+    padding: 20px;
+    
+  }
+  
+  .search-results h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    
+  }
+  
+  .search-results-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .search-result-card {
+    margin-left: 42px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .search-result-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .search-result-card .content {
+    padding: 15px;
+  }
+  
+  .search-result-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .search-result-card p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
+  .search-result-card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .search-result-card a:hover {
+    text-decoration: underline;
+  }
+  
