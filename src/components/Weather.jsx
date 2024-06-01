@@ -34,7 +34,8 @@ const Weather = () => {
   }
 
   const temperature = Math.round(weatherData.main.temp - 273.15);
-  const iconUrl = `http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+  const iconUrl = `https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`;
+
 
   return (
     <div className="weather">
