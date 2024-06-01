@@ -12,18 +12,18 @@ const CategoryNews = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=05ef2f4beaac4b3bba844e42e25bcf49`);
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
         const data = await response.json();
         const filteredArticles = data.articles
-  .filter(article => 
-    article.urlToImage && 
-    article.title && 
-    article.description && 
-    article.source && 
-    article.publishedAt && 
-    article.url
-  )
-  .slice(0, 8);
+          .filter(article => 
+            article.urlToImage && 
+            article.title && 
+            article.description && 
+            article.source && 
+            article.publishedAt && 
+            article.url
+          )
+          .slice(0, 8);
 
         setArticles(filteredArticles);
         setLoading(false);

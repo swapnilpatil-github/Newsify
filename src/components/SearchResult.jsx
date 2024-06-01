@@ -2,22 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './styles/SearchResult.css'; 
+
 const SearchResult = () => {
   const { query } = useParams();
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const encodedQuery = encodeURIComponent(query);
-        const response = await fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&apiKey=05ef2f4beaac4b3bba844e42e25bcf49`);
+        const response = await fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
         if (!response.ok) {
           throw new Error('Failed to fetch news');
         }
         const data = await response.json();
         if (data.articles) {
-        
           setSearchResults(data.articles.slice(0, 8));
         } else {
           console.error('Error fetching news: Articles not found in response');
@@ -28,12 +29,11 @@ const SearchResult = () => {
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, [query]);
-  
+
   return (
-    
     <div className="search-results-container">
       <button className="back-btn">
         <Link to="/homepage">Go Back</Link>
@@ -59,7 +59,6 @@ const SearchResult = () => {
         </div>
       )}
     </div>
-    
   );
 };
 
