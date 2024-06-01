@@ -10,6 +10,8 @@ function Homepage() {
       <Navbar />
       <Categories />
       <TrendingNews />
+     
+
       
     </div>
   )

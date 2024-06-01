@@ -6,6 +6,19 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 5px;
+ 
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.weather:hover {
+  background-color: #0056b3;
+}
+
+.weather img {
+  width: 24px;
+  height: 24px;
 }
 
 .weather-modal {
@@ -13,16 +26,18 @@
   top: calc(100% + 10px);
   right: 0;
   width: 200px;
-  background-color: black;
+  background-color: #f0f8ff;
+  color: black;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  display: none; 
+  padding: 10px;
+  z-index: 10;
+  display: none;
 }
 
-.weather:hover .weather-modal {
-  display: block; 
+.weather-modal.show {
+  display: block;
 }
-
 
 .weather-modal table {
   width: 100%;
@@ -35,4 +50,27 @@
 
 .weather-modal td:first-child {
   font-weight: bold;
+}
+
+.weather-modal input {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.weather-modal button {
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weather-modal button:hover {
+  background-color: #0056b3;
 }
