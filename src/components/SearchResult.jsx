@@ -13,7 +13,7 @@ const SearchResult = () => {
       setLoading(true);
       try {
         const encodedQuery = encodeURIComponent(query);
-        const response = await fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
+        const response = await fetch(`https://newsapi.org/v2/everything?q=${encodedQuery}&apiKey=${import.meta.env.REACT_APP_NEWS_API_KEY}`);
         if (!response.ok) {
           throw new Error('Failed to fetch news');
         }

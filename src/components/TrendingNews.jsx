@@ -8,7 +8,7 @@ const TrendingNews = () => {
   const fetchRandomNews = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
+      const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.REACT_APP_NEWS_API_KEY}`);
       const data = await response.json();
   
       if (!data.articles) {
