@@ -9,6 +9,7 @@ const TrendingNews = () => {
     try {
       setLoading(true);
       const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.REACT_APP_NEWS_API_KEY}`);
+      
       const data = await response.json();
   
       if (!data.articles) {

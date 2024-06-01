@@ -21,6 +21,10 @@
   }
   
   .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-left: auto; 
+    gap: 10px;
   }
   

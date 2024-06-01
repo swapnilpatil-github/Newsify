@@ -2,6 +2,7 @@ import React from 'react'
 import Search from './Search'
 import Weather from './Weather'
 import './styles/Navbar.css'
+import GoogleLogoutButton from './GoogleLogoutButton'
 function Navbar() {
   return (
    <div className="main">
@@ -12,7 +13,9 @@ function Navbar() {
         <Search></Search>
     </div>
     <div className="right">
+        
         <Weather></Weather>
+        <GoogleLogoutButton></GoogleLogoutButton>
     </div>
    </div>
   )

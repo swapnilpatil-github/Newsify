@@ -1,6 +1,7 @@
 // Footer.js
 import React from "react";
 import "./styles/Footer.css"; 
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -22,6 +23,7 @@ const Footer = () => {
               >
                 <h3>@GitHub</h3>
               </a>
+              
             </div>
           </div>
         </div>
