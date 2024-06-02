@@ -4,8 +4,7 @@ import './styles/Categories.css';
 
 const Categories = () => {
   const categories = [
-    'Top Stories',
-    'World News',
+    
     'Business',
     'Technology',
     'Science',

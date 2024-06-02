@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Categories from './Categories';
 import './styles/CategoryNews.css';
+import StoredCategoryNews from './DummyData/StoredCategoryNews';
 
 const CategoryNews = () => {
   const [articles, setArticles] = useState([]);
@@ -28,7 +29,14 @@ const CategoryNews = () => {
         setArticles(filteredArticles);
         setLoading(false);
       } catch (error) {
+        
         setError('Error fetching news. Please try again later.');
+       
+    if (StoredCategoryNews[category]) {
+      setArticles(StoredCategoryNews[category].articles);
+    } else {
+      setArticles([]);
+    }
         setLoading(false);
       }
     };
@@ -63,7 +71,10 @@ const CategoryNews = () => {
             ))}
           </div>
         ) : (
+          <div>
+          <Link to="/homepage">Go Back</Link>
           <p>No news available for this category.</p>
+          </div>
         )}
       </div>
     </div>

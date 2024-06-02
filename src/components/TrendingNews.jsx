@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import StoredTrendingNews from './DummyData/StoredTrendingNews'
 import './styles/TrendingNews.css';
 
 const TrendingNews = () => {
@@ -6,10 +7,11 @@ const TrendingNews = () => {
   const [loading, setLoading] = useState(true);
   
   const fetchRandomNews = async () => {
+   
     try {
       setLoading(true);
       const response = await fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${import.meta.env.REACT_APP_NEWS_API_KEY}`);
-      
+     
       const data = await response.json();
   
       if (!data.articles) {
@@ -27,6 +29,7 @@ const TrendingNews = () => {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching trending news:', error);
+      setTrendingNews(StoredTrendingNews.articles)
       setLoading(false);
     }
   };
